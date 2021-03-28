@@ -21,26 +21,25 @@
             'grade' => 'C'
         ),
     ];
-    
-    echo "<table>";
-
-
-    foreach($_student_record as $data) {
-        echo $data['name']. "          ".$data['email']." ".$data['grade']."\n"; 
-        echo "<br/>";
-    };
-        
-    echo "</table"
-    // print_r($_student_record[name]);
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
+
+        <style>
+            table { border: 1px solid; }
+            td, th {
+                border-collapse: collapse;
+                border: 1px solid;
+                text-align: center;
+                padding: 5px;
+            }
+        </style>
     
     </head>
     <body>
-        <table style="border: 1px solid;">
+        <table>
             <tr>
                 <th>NAME</th>
                 <th>EMAIL</th>
@@ -48,13 +47,13 @@
             </tr>
             <?php
                 foreach($_student_record as $key => $value){
+                    echo "<tr>";
+
                     foreach($value as $k => $v){
-                        echo "<tr>";
-                        // echo "<br/>";
                         echo "<td>$v</td>"; // Get value.
-                        // echo "<br/>";
-                        echo "</tr>";
                     }
+                    
+                    echo "</tr>";
                 }
             ?>
         </table>
